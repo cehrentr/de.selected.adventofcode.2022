@@ -14,7 +14,7 @@ class AdventOfCodePuzzleDay05:
     After the crates are rearranged, the desired crates will be at the top of each stack.
 
     The Elves don't want to interrupt the crane operator during this delicate procedure, but they forgot to
-    ask her which crate will end up where, and they want to be ready to unload them as soon as possible so they
+    ask her which crate will end up where, and they want to be ready to unload them as soon as possible, so they
     can embark.
 
     They do, however, have a drawing of the starting stacks of crates and the rearrangement procedure (your
@@ -99,7 +99,8 @@ class AdventOfCodePuzzleDay05:
         [Z] [M] [P]
          1   2   3
 
-    However, the action of moving three crates from stack 1 to stack 3 means that those three moved crates stay in the same order, resulting in this new configuration:
+    However, the action of moving three crates from stack 1 to stack 3 means that those three moved crates stay
+    in the same order, resulting in this new configuration:
 
                 [D]
                 [N]
