@@ -13,19 +13,19 @@ class TestAdventOfCodePuzzleDay01(unittest.TestCase):
         with open("./testdata/input_day01.txt", "r") as fil:
             self.input_day01 = [line.strip() for line in fil]
 
-    def test_solution_day_01_puzzle_1_example(self):
+    def test_solution_day01_puzzle_1_example(self):
         solution = AdventOfCodePuzzleDay01(self.input_day01_example).solve_puzzle_1()
         self.assertEqual(solution, 24000)
 
-    def test_solution_day_01_puzzle_1(self):
+    def test_solution_day01_puzzle_1(self):
         solution = AdventOfCodePuzzleDay01(self.input_day01).solve_puzzle_1()
         self.assertEqual(solution, 70374)
 
-    def test_solution_day_01_puzzle_2_example(self):
+    def test_solution_day01_puzzle_2_example(self):
         solution = AdventOfCodePuzzleDay01(self.input_day01_example).solve_puzzle_2()
         self.assertEqual(solution, 45000)
 
-    def test_solution_day_01_puzzle_2(self):
+    def test_solution_day01_puzzle_2(self):
         solution = AdventOfCodePuzzleDay01(self.input_day01).solve_puzzle_2()
         self.assertEqual(solution, 204610)
 
