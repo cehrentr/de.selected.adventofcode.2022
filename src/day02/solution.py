@@ -34,9 +34,9 @@ class AdventOfCodePuzzleDay02:
 
     For example, suppose you were given the following strategy guide:
 
-    A Y
-    B X
-    C Z
+        A Y
+        B X
+        C Z
 
     This strategy guide predicts and recommends the following:
 
@@ -77,7 +77,7 @@ class AdventOfCodePuzzleDay02:
     # Y for Paper
     # Z for Scissors
     # Note: Our move is always the second one so win and loss are switch here
-    game_results = {
+    GAME_RESULTS = {
         "A X": "draw",
         "A Y": "win",
         "A Z": "loss",
@@ -89,13 +89,13 @@ class AdventOfCodePuzzleDay02:
         "C Z": "draw",
     }
 
-    game_points = {
+    GAME_POINTS = {
         "win":  6,
         "loss": 0,
         "draw": 3
     }
 
-    move_points = {
+    MOVE_POINTS = {
         "A": 1,
         "B": 2,
         "C": 3,
@@ -104,7 +104,7 @@ class AdventOfCodePuzzleDay02:
         "Z": 3,
     }
 
-    wanted_results = {
+    WANTED_RESULTS = {
         "X": "loss",
         "Y": "draw",
         "Z": "win"
@@ -115,7 +115,7 @@ class AdventOfCodePuzzleDay02:
 
     def solve_puzzle_1(self) -> int:
         return sum([
-            self.game_points[self.game_results[game]] + self.move_points[game[-1:]]
+            self.GAME_POINTS[self.GAME_RESULTS[game]] + self.MOVE_POINTS[game[-1:]]
             for game in self.games
         ])
 
@@ -124,14 +124,14 @@ class AdventOfCodePuzzleDay02:
 
         for game in self.games:
             opponents_move, wanted_result = game.split(" ")
-            wanted_result = self.wanted_results[wanted_result]
+            wanted_result = self.WANTED_RESULTS[wanted_result]
 
             move_to_call = {
                 moves.split(" ")[0]: moves.split(" ")[1]
-                for moves, res in self.game_results.items()
+                for moves, res in self.GAME_RESULTS.items()
                 if res == wanted_result
             }[opponents_move]
 
-            result += self.game_points[wanted_result] + self.move_points[move_to_call]
+            result += self.GAME_POINTS[wanted_result] + self.MOVE_POINTS[move_to_call]
 
         return result
